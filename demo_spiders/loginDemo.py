@@ -11,7 +11,7 @@ class LoginDemoSpider(Spider):
 
   def afterResponse(self, response, url):
     if(response.code==403):
-      print 'login result:' + str(self.login())
+      print ('login result:' + str(self.login()))
       return None
     html = Spider.afterResponse(self, response, url)
     return Spider.removeScripts(self, html)

@@ -1,5 +1,6 @@
 {
   "spiders":[
+    {"file":"demo_spiders.extractSpider","class":"ExtractSpider"},
     {"file":"demo_spiders.imageSpider","class":"ImageSpider"}
   ],
   "concurrency":1,

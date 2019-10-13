@@ -1,6 +1,6 @@
 #!/usr/bin/python
 #coding=utf-8
-import os,io
+import os,io,sys
 from simplified_scrapy.core.spider import Spider 
 class ImageSpider(Spider):
   # concurrencyPer1s=2
@@ -9,14 +9,17 @@ class ImageSpider(Spider):
   start_urls = ['http://www.umei.cc/touxiangtupian/3.htm']
 
   def __init__(self):
-    Spider.__init__(self,self.name)
+    Spider.__init__(self,self.name) #necessary
     if(not os.path.exists('images/')):
       os.mkdir('images/')
     self.url_store.resetUrls(self.start_urls)
 
   def afterResponse(self, response, url):
     try:
-      if(response.code==200 and response.headers.maintype=='image'):
+      if sys.version_info.major == 2:
+        maintype = response.headers.maintype
+      else: maintype =response.info().get('Content-Type')
+      if(response.code==200 and maintype and maintype.find('image')>=0):
         name = 'images'+url[url.rindex('/'):]
         file = io.open(name, "ab")
         file.write(response.read())
@@ -26,7 +29,7 @@ class ImageSpider(Spider):
         html = Spider.afterResponse(self, response, url)
         return Spider.removeScripts(self, html)
     except Exception as err:
-      print err
+      print (err)
 
   def extract(self, url,html,models,modelNames):
     urls = self.listImg(html)
