@@ -83,4 +83,4 @@ def sortFile():
       .replace('笔趣岛 m.biqudao.cc  一秒记住【笔趣岛 www.biqudao.cc】，无弹窗，更新快，免费阅读！','\n')
       .replace('笔趣岛 m.biqudao.cc','\n'))
 
-sortFile()
+# sortFile()
