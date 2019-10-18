@@ -65,14 +65,12 @@ def setCookie(self, url, cookie):
 ```
 # HtmlStore类需要实现下面这些方法
 ```
-#下面两个方法需要同时重写。如果重写了一个，另一个没有重写，可能会出错。
 def popHtml(self,state=0):
 def saveHtml(self,url,html):
 def updateState(self,id,state):
 ```
 # UrlStore类需要实现下面这些方法
 ```
-#下面三个方法需要同时重写。如果重写了一个，其它的没有重写，可能会出错。
 def popUrl(self):
 def getCount(self):
 def checkUrl(self,url):
