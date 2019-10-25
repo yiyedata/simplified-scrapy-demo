@@ -4,6 +4,8 @@ simplified scrapy demo
 + Python 2.7, Python 3+
 + pip install simplified-scrapy
 + Works on Linux, Windows, Mac OSX, BSD
+如果是Python 2需要安装futures
+`pip install futures`
 # 运行
 进入项目根目录，执行下面命令  
 `python start.py`
