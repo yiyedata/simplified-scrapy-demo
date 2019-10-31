@@ -1,7 +1,7 @@
 #!/usr/bin/python
 #coding=utf-8
 """
-下载小说的例子
+自定义抽取标题、正文内容的例子
 """
 import io,json
 from simplified_scrapy.core.spider import Spider 
