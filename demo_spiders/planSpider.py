@@ -1,11 +1,11 @@
 """
-以新浪健康为例，二级域名采集，自动抽取文章数据
+二级域名采集，自动抽取文章数据
 """
 from simplified_scrapy.core.spider import Spider
 
 class PlanSpider(Spider):
   name = 'plan-spider'
-  start_urls = ['http://health.sina.com.cn/']
+  start_urls = ['http://www.scrapyd.cn/']
   models = ['auto_main_2','auto_obj']
 
   def afterResponse(self, response, url):
