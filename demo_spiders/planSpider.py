@@ -1,5 +1,5 @@
 """
-二级域名采集，自动抽取文章数据
+二级域名采集，自动抽取文章数据，配置定时更新
 """
 from simplified_scrapy.core.spider import Spider
 
