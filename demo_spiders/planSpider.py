@@ -6,7 +6,7 @@ from simplified_scrapy.core.spider import Spider
 class PlanSpider(Spider):
   name = 'plan-spider'
   start_urls = ['http://www.scrapyd.cn/']
-  models = ['auto_main_2','auto_obj']
+  models = ['auto_main','auto_obj']
 
   def afterResponse(self, response, url):
     html = Spider.afterResponse(self, response, url)
