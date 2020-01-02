@@ -1,9 +1,10 @@
 {
   "spiders":[
-    {"file":"demo_spiders.extractSpider","class":"ExtractSpider"},
-    {"file":"demo_spiders.imageSpider","class":"ImageSpider"}
+    {"file":"spider_examples.example","class":"MySpider"},
+    {"file":"spider_examples.toscrape","class":"ToscrapeSpider"},
+    {"file":"spider_examples.files","class":"ImageSpider"}
   ],
-  "concurrency":1,
+  "concurrency":3,
   "concurrencyPer1S":6,
   "intervalTime":0.3
 }
