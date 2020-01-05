@@ -5,7 +5,7 @@ html='''
 <!doctype html>
 <html>
 <head>
-    <title>Example Domain</title>
+    <title>Example Domain title</title>
     <meta charset="utf-8" />
     <meta http-equiv="Content-type" content="text/html; charset=utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -32,6 +32,8 @@ title = doc.getElementByTag('title')
 title = doc.title # The shorter the path, the better
 title = doc.head.title
 title = doc.getElementByTag('head').title
+title = doc.getElementByText('title')
+title = doc.getElementByReg('Example[^>]*title')
 print ('-'*50,'title')
 print (title) # {'tag': 'title', 'html': 'Example Domain'}
 print (title.text) # Example Domain
