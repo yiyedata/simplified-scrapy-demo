@@ -1,5 +1,6 @@
 #!/usr/bin/python
 #coding=utf-8
+# If there is something wrong after running, please update the library.
 from simplified_scrapy.spider import SimplifiedDoc 
 html='''
 <!doctype html>
