@@ -25,19 +25,26 @@ html='''
 </table>
 '''
 doc = SimplifiedDoc(html) # create doc
-# get all row
+# get all rows
 rows = doc.getElementsByTag('tr')
 rows = doc.trs
 rows = doc.tbody.getChildren()
 rows = doc.tbody.children
-print ('-'*50,'get all row')
+rows = doc.selects('tr')
+print ('-'*50,'get all rows')
+print (rows)
+# get rows except header
+rows = doc.getElementsByReg('<td.*>')
+print ('-'*50,'get all rows except header')
 print (rows)
 
-print ('-'*30,'get all cell')
-# get all cell, td and th
+print ('-'*30,'get all cells')
+# get all cells, td and th
 for row in rows:
   cels = row.getElementsByTag(['th','td'])
   cels = row.children
+  print (cels)
+  cels = row.selects('th|td>text()')
   print (cels)
 
 # Filter out the header

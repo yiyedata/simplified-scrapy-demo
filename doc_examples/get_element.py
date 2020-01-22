@@ -57,3 +57,24 @@ div = doc.div.next # Position second div by first div
 print ('-'*50,'second div')
 print (div)
 print ('class:',div['class'],'attr:',div.attr,'id:',div.id)
+
+# use select geting the second div
+div = doc.select('#test')
+div = doc.select('div#test')
+div = doc.select('div.demo')
+div = doc.select('div@attr=test')
+print ('-'*50,'second div')
+print (div)
+# use select geting the second h1 
+# # Followed by ID, . Followed by class, @ followed by attribute name. If there is a tag, it must be placed first.
+h1 = doc.select('#test>h1')
+h1 = doc.select('div#test>h1')
+h1 = doc.select('div.demo>h1')
+h1 = doc.select('div@attr=test>h1')
+print ('-'*50,'second h1')
+print (h1)
+# use text() get the text
+h1 = doc.select('div#test>h1>text()')
+print (h1)
+
+
