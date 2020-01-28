@@ -11,9 +11,22 @@ html='''
 '''
 doc = SimplifiedDoc(html)
 # # Followed by ID, . Followed by class, @ followed by attribute name. If there is a tag, it must be placed first.
+
 print (doc.select('root>#id1'))
+# The same as 
+print (doc.getElementByTag('root').getElementByID('id1'))
 print (doc.select('root>@attr=attr1'))
 print (doc.select('root>data>text()'))
+
 print (doc.select('root>data>attr()'))
-print (doc.selects('root>item>text(data,other)'))
+print (doc.getElementByTag('root').getElementByTag('data').attr)
+print (doc.selects('root>item>text(other),data>attr()'))
+print (doc.selects('root>item>text(other,data),data>attr()'))
+
+print (doc.selects('root>item>(data>attr())'))
+# The same as 
+print ([item.select('data>attr()') for item in doc.getElementByTag('root').getElementsByTag('item')])
+print (doc.selects('root>item>data>attr()'))
+# The same as 
+print ([item.attr for item in doc.getElementByTag('root').getElementByTag('item').getElementsByTag('data')])
 
