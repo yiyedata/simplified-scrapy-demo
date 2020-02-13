@@ -31,7 +31,7 @@ SimplifiedMain.startThread(DemoSpider())
 ```
 
 # pip install
-simplified-scrapy is backward compatible, and the new version has more functions, you can update boldly.
+simplified-scrapy is backward compatible, and the new version has more functions and faster speed, you can update boldly.
 ```
 pip install -U simplified-scrapy
 ```
