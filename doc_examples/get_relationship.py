@@ -19,22 +19,36 @@ html='''
 '''
 doc = SimplifiedDoc(html) # create doc
 div = doc.div
+assert div['class']=='parent'
 # get children
 ps = div.getChildren()
+assert len(ps)==3
 ps = div.children
+assert len(ps)==3
 ps = div.getElementsByTag('p')
+assert len(ps)==3
 ps = div.ps
+assert len(ps)==3
 print ('-'*50,'get children')
 print (ps)
 # get parent
 div = doc.p.getParent()
+assert div['class']=='parent'
 div = doc.p.getParent(tag="div")
+assert div['class']=='parent'
 div = doc.p.parent
+assert div['class']=='parent'
 print ('-'*50,'get parent')
 print (div)
 # get brothers
 p = div.p
+assert p.text=='child 11'
 p = p.next
-print ('next p',p.next)
-print ('previous p',p.previous)
+assert p.text=='child 12'
+p = p.next
+assert p.text=='child 13'
+assert not p.next
+ps = p.previous
+assert len(ps)==2
+print ('previous p',ps)
 

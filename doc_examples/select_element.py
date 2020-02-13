@@ -11,19 +11,30 @@ html='''
 '''
 doc = SimplifiedDoc(html)
 # # Followed by ID, . Followed by class, @ followed by attribute name. If there is a tag, it must be placed first.
-
-print (doc.select('root>#id1'))
+item = doc.select('root>#id1')
+assert item.id=='id1'
+print (item)
 # The same as 
-print (doc.getElementByTag('root').getElementByID('id1'))
-print (doc.select('root>@attr=attr1'))
-print (doc.select('root>data>text()'))
+item = doc.getElementByTag('root').getElementByID('id1')
+assert item.id=='id1'
+print (item)
+item = doc.select('root>@attr=attr1')
+assert item.attr=='attr1'
+print (item)
+item = doc.select('root>data>text()')
+assert item=='data1'
 
-print (doc.select('root>data>attr()'))
-print (doc.getElementByTag('root').getElementByTag('data').attr)
+item = doc.select('root>data>attr()')
+assert item=='attr1'
+
+assert 'attr1'==doc.getElementByTag('root').getElementByTag('data').attr
 print (doc.selects('root>item>text(other),data>attr()'))
+assert 'attr3'==doc.selects('root>item>text(other),data>attr()')[2][1]
 print (doc.selects('root>item>text(other,data),data>attr()'))
+assert 'attr3'==doc.selects('root>item>text(other,data),data>attr()')[2][2]
 
 print (doc.selects('root>item>(data>attr())'))
+assert 'attr3'==doc.selects('root>item>(data>attr())')[2]
 # The same as 
 print ([item.select('data>attr()') for item in doc.getElementByTag('root').getElementsByTag('item')])
 print (doc.selects('root>item>data>attr()'))

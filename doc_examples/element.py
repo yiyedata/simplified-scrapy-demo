@@ -12,6 +12,7 @@ html='''
 '''
 doc = SimplifiedDoc(html) # create doc
 ele = doc.select('name#2') # doc.getElementByID('2',tag='name')
+assert ele.id=='2'
 # Each object obtained by doc and the object obtained by this object have the following properties, 
 # except for the object with an empty value.
 # The object in the example also has an id attribute
@@ -19,4 +20,4 @@ print('id = {}\ntag = {}\nhtml = {}\ntext = {}\nouterHtml = {}\n_start = {}\n_en
   ele.id, ele.tag, ele.html, ele.text, ele.outerHtml, ele._start, ele._end))
 # _start and _end represent the start and end position of the object label in html.
 flag = ele.outerHtml == doc.html[ele._start:ele._end]
-print (flag) # True
+assert flag

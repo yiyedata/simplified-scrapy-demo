@@ -27,14 +27,20 @@ html='''
 doc = SimplifiedDoc(html) # create doc
 # get all rows
 rows = doc.getElementsByTag('tr')
+assert len(rows)==4
 rows = doc.trs
+assert len(rows)==4
 rows = doc.tbody.getChildren()
+assert len(rows)==4
 rows = doc.tbody.children
+assert len(rows)==4
 rows = doc.selects('tr')
+assert len(rows)==4
 print ('-'*50,'get all rows')
 print (rows)
 # get rows except header
 rows = doc.getElementsByReg('<td.*>')
+assert len(rows)==3
 print ('-'*50,'get all rows except header')
 print (rows)
 
@@ -49,10 +55,15 @@ for row in rows:
 
 # Filter out the header
 rows = doc.trs.notContains('<th')
+assert len(rows)==3
 rows = doc.trs.contains('<td')
+assert len(rows)==3
 rows = doc.getElementsByTag('tr',start='</tr>')
+assert len(rows)==3
 rows = doc.tr.getNexts()
+assert len(rows)==3
 rows = doc.tr.nexts
+assert len(rows)==3
 print ('-'*50,'Get all rows except header')
 print (rows)
 print (rows[0].getText(','))
