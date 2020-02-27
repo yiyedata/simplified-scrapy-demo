@@ -5,7 +5,7 @@ simplified-scrapy demo
 + Works on Linux, Windows, Mac OSX, BSD
 # run  
 ```
-from simplified_scrapy.simplified_main import SimplifiedMain
+from simplified_scrapy import SimplifiedMain
 SimplifiedMain.startThread()
 ```
 # Demo
@@ -16,7 +16,7 @@ class DemoSpider(Spider):
 ```
 Here is an example of collecting data
 ```
-from simplified_scrapy.spider import Spider, SimplifiedDoc
+from simplified_scrapy import Spider, SimplifiedDoc
 class DemoSpider(Spider):
   name = 'demo-spider'
   start_urls = ['http://quotes.toscrape.com/']
