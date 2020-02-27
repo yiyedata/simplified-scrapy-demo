@@ -11,7 +11,7 @@ SimplifiedMain.startThread()
 # Demo
 Custom crawler class needs to extend Spider class
 ```
-from core.spider import Spider 
+from simplified_scrapy import Spider 
 class DemoSpider(Spider):
 ```
 Here is an example of collecting data
@@ -26,7 +26,7 @@ class DemoSpider(Spider):
     lstA = doc.listA(url=url["url"])
     return [{"Urls": lstA, "Data": None}]
 
-from simplified_scrapy.simplified_main import SimplifiedMain
+from simplified_scrapy import SimplifiedMain
 SimplifiedMain.startThread(DemoSpider())
 ```
 
