@@ -4,10 +4,10 @@ from simplified_scrapy.core.sqlite_urlstore import SqliteUrlStore
 import random
 class StressTest(Spider):
   name = 'stress_test'
-  request_tm = True # 启用统计记录
+  request_tm = True 
   concurrencyPer1s=5
   request_timeout=60
-  save_html = False # 不保存页面数据
+  save_html = False # Do not save page data
   base_url = "http://quotes.toscrape.com/"
 
   def popUrl(self):
