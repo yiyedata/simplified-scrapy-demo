@@ -5,7 +5,7 @@ import random
 class StressTest(Spider):
   name = 'stress_test'
   request_tm = True 
-  concurrencyPer1s=5
+  concurrencyPer1s=50
   request_timeout=60
   save_html = False # Do not save page data
   base_url = "http://quotes.toscrape.com/"
@@ -19,7 +19,6 @@ class StressTest(Spider):
 
   def urlCount(self):
     return 1
-  
   def extract(self,url,html,models,modelNames):
     return True
 
