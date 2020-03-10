@@ -52,6 +52,13 @@ for row in rows:
   print (cels)
   cels = row.selects('th|td>text()')
   print (cels)
+# get all cells. You can use select, selects, getElement and other methods for list data
+cels = rows.selects('th|td>text()')
+assert cels[2][0]=='3'
+# print (cels)
+
+table = doc.getTable()
+assert table[3][0]=='3'
 
 # Filter out the header
 rows = doc.trs.notContains('<th')
@@ -67,4 +74,3 @@ assert len(rows)==3
 print ('-'*50,'Get all rows except header')
 print (rows)
 print (rows[0].getText(','))
-
