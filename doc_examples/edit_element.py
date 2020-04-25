@@ -15,6 +15,7 @@ item = doc.select('root>#id1')
 print (item)
 print (item.outerHtml)
 assert item.id=='id1'
+
 # Edit content
 item.setContent('test edit')
 print (item)
@@ -26,11 +27,13 @@ item.setAttr("class","test edit")
 print (item)
 print (item.outerHtml)
 assert item['class']=='test edit'
+
 # For properties that do not exist, add
 item.setAttr("key","value")
 print (item)
 print (item.outerHtml)
 assert item.key=='value'
+
 # For value is None, delete
 item.setAttr("key",None)
 print (item)
