@@ -49,6 +49,12 @@ print (item.outerHtml)
 assert item.id=='replease_id'
 assert item.next.id=='id2'
 
+# Insert before, Insert after
+item.insertBefore('<before type="insert">')
+item.insertAfter('</before>')
+print (item.parent)
+assert (item.parent.tag=='before')
+
 # Remove itself
 item.repleaceSelf('')
 print (doc.html)
