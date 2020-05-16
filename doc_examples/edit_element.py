@@ -28,6 +28,12 @@ print (item)
 print (item.outerHtml)
 assert item['class']=='test edit'
 
+# Edit attribute
+item.setAttrs({"attr1":"attr1","attr2":"attr2"})
+print (item)
+print (item.outerHtml)
+assert item['attr1']=='attr1'
+
 # For properties that do not exist, add
 item.setAttr("key","value")
 print (item)
