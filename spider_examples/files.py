@@ -11,7 +11,7 @@ class ImageSpider(Spider):
     if(not os.path.exists('images/')):
       os.mkdir('images/')
 
-  def afterResponse(self, response, url, error=None):
+  def afterResponse(self, response, url, error=None, extra=None):
     try:
       if sys.version_info.major == 2: maintype = response.headers.maintype
       else: maintype =response.info().get('Content-Type')
