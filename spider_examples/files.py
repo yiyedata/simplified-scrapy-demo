@@ -17,10 +17,11 @@ class ImageSpider(Spider):
 
     def afterResponse(self, response, url, error=None, extra=None):
         try:
-            utils.saveResponseAsFile(response, self.imgPath, 'image')
+            flag = utils.saveResponseAsFile(response, self.imgPath, 'image')
+            if flag: return None
         except Exception as err:
             print(err)
-        return None
+        return Spider.afterResponse(self, response, url, error, extra)
 
     def extract(self, url, html, models, modelNames):
         urls = SimplifiedDoc(html).listImg(url=url['url'])
