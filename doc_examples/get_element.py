@@ -31,16 +31,22 @@ doc = SimplifiedDoc(html) # create doc
 # The way to get title is as follows
 title = doc.getElementByTag('title')
 assert title.text == 'Example Domain title'
+assert title.outerHtml == '<title>Example Domain title</title>'
 title = doc.title # The shorter the path, the better
 assert title.text == 'Example Domain title'
+assert title.outerHtml == '<title>Example Domain title</title>'
 title = doc.head.title
 assert title.text == 'Example Domain title'
+assert title.outerHtml == '<title>Example Domain title</title>'
 title = doc.getElementByTag('head').title
 assert title.text == 'Example Domain title'
+assert title.outerHtml == '<title>Example Domain title</title>'
 title = doc.getElementByText('title')
 assert title.text == 'Example Domain title'
+assert title.outerHtml == '<title>Example Domain title</title>'
 title = doc.getElementByReg('Example[^>]*title')
 assert title.text == 'Example Domain title'
+assert title.outerHtml == '<title>Example Domain title</title>'
 print ('-'*50,'title')
 print (title) # {'tag': 'title', 'html': 'Example Domain'}
 print (title.text) # Example Domain
@@ -95,6 +101,7 @@ h1 = doc.select('div.demo>h1')
 assert h1.text == '2 Example Domain'
 h1 = doc.select('div@attr=test>h1')
 assert h1.text == '2 Example Domain'
+assert h1.outerHtml == '<h1>2 Example Domain</h1>'
 print ('-'*50,'second h1')
 print (h1)
 # use text() get the text

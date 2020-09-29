@@ -21,3 +21,4 @@ print('id = {}\ntag = {}\nhtml = {}\ntext = {}\nouterHtml = {}\n_start = {}\n_en
 # _start and _end represent the start and end position of the object label in html.
 flag = ele.outerHtml == doc.html[ele._start:ele._end]
 assert flag
+assert ele.outerHtml[:len('<name id="2">')] == '<name id="2">'
