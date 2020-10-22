@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Root>
+  <User>
+      <Name>Elsa</Name>
+      <Sex>female</Sex>
+      <Age>19</Age>
+  </User>
+  <User>
+      <Name>Anna</Name>
+      <Sex>female</Sex>
+      <Age>18</Age>
+  </User>
+  <User>
+      <Name>Kristoff</Name>
+      <Sex>male</Sex>
+      <Age>20</Age>
+  </User>
+  <User>
+      <Name>Sven</Name>
+      <Sex>male</Sex>
+      <Age>8</Age>
+  </User>
+</Root>
