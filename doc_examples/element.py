@@ -1,6 +1,6 @@
 #!/usr/bin/python
 #coding=utf-8
-from simplified_scrapy.spider import SimplifiedDoc 
+from simplified_scrapy import SimplifiedDoc 
 html='''
 <root>
   <list id="1">
