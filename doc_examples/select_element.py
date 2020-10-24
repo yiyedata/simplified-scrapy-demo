@@ -1,7 +1,7 @@
 #!/usr/bin/python
 #coding=utf-8
 # If there is something wrong after running, please update the library. pip install -U simplified_scrapy
-from simplified_scrapy.spider import SimplifiedDoc 
+from simplified_scrapy import SimplifiedDoc 
 html='''
 <root>
     <item class="class1" id="id1"><data attr="attr1">data1</data><other>other1</other></item>
