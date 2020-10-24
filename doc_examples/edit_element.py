@@ -1,7 +1,7 @@
 #!/usr/bin/python
 #coding=utf-8
 # If there is something wrong after running, please update the library. pip install -U simplified_scrapy
-from simplified_scrapy.spider import SimplifiedDoc
+from simplified_scrapy import SimplifiedDoc
 html = '''
 <root>
     <item class="class1" id="id1">data1</item>
@@ -55,8 +55,9 @@ repleace = doc.createElement('replease',
                              id='replease_id')
 
 # Replace itself
-item.repleaceSelf(repleace)
+item.replaceSelf(repleace)
 print(item)
+item = doc.select('root>replease')
 assert item.outerHtml[:10] == '<replease '
 assert item.id == 'replease_id'
 assert item.next.id == 'id2'
@@ -68,7 +69,7 @@ print(item.parent)
 assert (item.parent.tag == 'before')
 
 # Remove itself
-item.repleaceSelf('')
+item.replaceSelf('')
 assert not item
 
 # insert child at first
